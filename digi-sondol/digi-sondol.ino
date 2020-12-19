@@ -3,7 +3,7 @@
 // WAV files converted to code by wav2sketch
 #include "AudioSampleClickw.h" // https://freesound.org/people/Druminfected/sounds/250551/
 #include "AudioSampleClick_louderw.h"
-#include "AudioSampleClick_even_louderw.h"
+#include "SondolClick.h"
 
 #include <Audio.h>
 #include <Wire.h>
@@ -53,7 +53,7 @@ void setup() {
 
 void loop() {
   if (audioTimer > audioInterval) {
-    playMem1.play(AudioSampleClick_even_louderw);
+    playMem1.play(SondolClick);
     audioTimer = 0;
   }
   
