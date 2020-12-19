@@ -1,8 +1,6 @@
 // Digital Sample-based Sondol
 
 // WAV files converted to code by wav2sketch
-#include "AudioSampleClickw.h" // https://freesound.org/people/Druminfected/sounds/250551/
-#include "AudioSampleClick_louderw.h"
 #include "SondolClick.h"
 
 #include <Audio.h>
