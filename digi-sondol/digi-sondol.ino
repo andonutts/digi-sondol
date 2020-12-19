@@ -20,6 +20,7 @@ AudioControlSGTL5000     sgtl5000_1;
 
 int freqPin = A0;
 int volPin = A2;
+int ledPin = 17;
 
 elapsedMillis audioTimer;
 elapsedMillis inputTimer;
@@ -41,6 +42,8 @@ void setup() {
   sgtl5000_1.enable();
   sgtl5000_1.volume(getVolume());
   audioInterval = getAudioInterval();
+  pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin, LOW);  // LED off
 
 #ifdef TEST_MODE
   sgtl5000_1.volume(0.2);
@@ -50,7 +53,9 @@ void setup() {
 
 void loop() {
   if (audioTimer > audioInterval) {
+    digitalWrite(ledPin, HIGH);  // LED on
     playMem1.play(SondolClick);
+    digitalWrite(ledPin, LOW);  // LED off
     audioTimer = 0;
   }
   
