@@ -25,7 +25,6 @@ int volPin = A2;
 
 elapsedMillis audioTimer;
 elapsedMillis inputTimer;
-elapsedMillis debugTimer;
 uint16_t audioInterval;
 
 float getVolume() {
@@ -65,18 +64,4 @@ void loop() {
   }
 #endif
 
-  if (debugTimer > 1000) {
-    Serial.println("------------");
-    Serial.print("Volume: ");
-    Serial.println(getVolume());
-    Serial.print("Audio interval (ms): ");
-    Serial.println(audioInterval);
-    Serial.println();
-    Serial.println("Raw analog readings");
-    Serial.print("volPin = ");
-    Serial.println(analogRead(volPin));
-    Serial.print("freqPin = ");
-    Serial.println(analogRead(freqPin));
-    debugTimer = 0;
-  }
 }
